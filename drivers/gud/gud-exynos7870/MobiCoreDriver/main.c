@@ -674,6 +674,8 @@ static int mobicore_probe(struct platform_device *pdev)
 
 		return 0;
 
+fail_start:
+	device_admin_exit();
 fail_create_dev:
 	mc_scheduler_exit();
 fail_mc_device_sched_init:
